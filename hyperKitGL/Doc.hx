@@ -1,4 +1,4 @@
-package hyperKitGL
+package hyperKitGL;
 import hyperKitGL.Sheet;
 import hyperKitGL.DivertTrace;
 import hyperKitGL.AnimateTimer;

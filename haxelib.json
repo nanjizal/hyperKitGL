@@ -1,0 +1,12 @@
+{
+    "name"         : "hyperKitGL",
+    "url"          : "https://github.com/nanjizal/hyperKitGL#hyperKitGL",
+    "license"      : "MIT",
+    "tags"         : ["WebGL","javascript","js" ],
+    "description"  : "Kit to help with WebGL",
+    "version"      : "0.0.1",
+    "releasenote"  : "See https://github.com/nanjizal/hyperKitGL/blob/master/CHANGELOG.md",
+    "classPath"    : "src",
+    "contributors" : ["Nanjizal"],
+    "dependencies" : {}
+}

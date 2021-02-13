@@ -1,4 +1,4 @@
-package kitGL.glWeb;
+package hyperKitGL;
 // taken from htmlHelper, kill probably does not work?
 #if js
 import js.Browser;

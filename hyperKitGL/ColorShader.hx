@@ -1,4 +1,4 @@
-package kitGL.glWeb;
+package hyperKitGL;
 
 inline
 var vertexString0: String =

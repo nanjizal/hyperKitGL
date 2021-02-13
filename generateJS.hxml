@@ -1,0 +1,10 @@
+--macro include('hyperKitGL')
+-cp src
+-main hyperKitGL.Doc
+--no-output
+
+--next
+-xml upkeep/js.xml
+-js foo.js
+
+# -D dump==pretty

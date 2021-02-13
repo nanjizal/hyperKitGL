@@ -1,5 +1,5 @@
 package hyperKitGL;
-#if js
+//#if js
 import hyperKitGL.Sheet;
 import hyperKitGL.DivertTrace;
 import hyperKitGL.AnimateTimer;
@@ -14,8 +14,8 @@ import hyperKitGL.ImageGL;
 import hyperKitGL.TextureShaders;
 import hyperKitGL.ARGB;
 import hyperKitGL.XY;
-#end
-//@:dox(hide)
+//#end
+@:dox(hide)
 class Docs {
     public static function main(){
         

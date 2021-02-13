@@ -1,8 +1,10 @@
 --macro include('hyperKitGL')
 -cp src
--main hyperKitGL.Doc
+--js
+-main hyperKitGL.Docs
 --no-output
-
+-D doc-gen
+-D html5
 --next
 -xml upkeep/js.xml
 -js foo.js

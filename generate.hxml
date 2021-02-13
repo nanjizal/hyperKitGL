@@ -1,5 +1,5 @@
 -D haxe4
 -cmd haxe generateJS.hxml
--cmd haxelib run dox -i upkeep --title "hyperKitGL API documentation" -D themeColor 0xcc0066 -D source-path https://github.com/nanjizal/kitGL/tree/master/src/ --toplevel-package kitGL 
+-cmd haxelib run dox -i upkeep --title "hyperKitGL API documentation" -D themeColor 0xcc0066 -D source-path https://github.com/nanjizal/hyperKitGL/tree/master/src/ --toplevel-package hyperKitGL
 -cmd cd pages
 -cmd open index.html

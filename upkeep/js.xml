@@ -120,6 +120,17 @@
 
 		`this.length` increases by 1.</haxe_doc>
 		</push>
+		<unshift public="1" set="method">
+			<f a="x">
+				<c path="Array.T"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Adds the element `x` at the start of `this` Array.
+
+		This operation modifies `this` Array in place.
+
+		`this.length` and the index of each Array element increases by 1.</haxe_doc>
+		</unshift>
 		<iterator public="1" get="inline" set="null" line="88">
 			<f a=""><c path="haxe.iterators.ArrayIterator"><c path="Array.T"/></c></f>
 			<meta><m n=":runtime"/></meta>
@@ -1245,6 +1256,25 @@
 	abstract types.
 
 	@see https://haxe.org/manual/types-abstract-array-access.html</haxe_doc></class>
+	<class path="StringBuf" params="" file="/usr/local/lib/haxe/std/StringBuf.hx">
+		<b><c path="String"/></b>
+		<new public="1" get="inline" set="null" line="44">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Creates a new StringBuf instance.
+
+		This may involve initialization of the internal buffer.</haxe_doc>
+		</new>
+		<haxe_doc>A String buffer is an efficient way to build a big string by appending small
+	elements together.
+
+	Unlike String, an instance of StringBuf is not immutable in the sense that
+	it can be passed as argument to functions which modify it by appending more
+	values.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":directlyUsed"/>
+		</meta>
+	</class>
 	<class path="StringTools" params="" file="/usr/local/lib/haxe/std/StringTools.hx">
 		<hex public="1" set="method" line="434" static="1">
 			<f a="n:?digits">
@@ -7128,6 +7158,198 @@
 	<x path="Int"/>
 	<x path="Float"/>
 </f></blueChannel>
+	</class>
+	<abstract path="hyperKitGL.iterArr.ArrayPairs" params="T" file="src/hyperKitGL/iterArr/ArrayPairs.hx">
+		<this><c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c></this>
+		<meta><m n=":transitive"/></meta>
+		<impl><class path="hyperKitGL.iterArr._ArrayPairs.ArrayPairs_Impl_" params="" file="src/hyperKitGL/iterArr/ArrayPairs.hx" private="1" module="hyperKitGL.iterArr.ArrayPairs" final="1">
+	<_new public="1" set="method" line="4" static="1">
+		<f a="arr">
+			<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+			<x path="hyperKitGL.iterArr.ArrayPairs"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+		</f>
+		<meta><m n=":noCompletion"/></meta>
+	</_new>
+	<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+	<get_length get="inline" set="null" line="6" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<x path="Int"/>
+</f></get_length>
+	<access get="inline" set="null" line="7" static="1">
+		<f a="this:key">
+			<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+			<x path="Int"/>
+			<a>
+				<y><c path="hyperKitGL.iterArr.ArrayPairs.T"/></y>
+				<x><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+			</a>
+		</f>
+		<meta><m n=":arrayAccess"/></meta>
+	</access>
+	<getObj public="1" get="inline" set="null" line="11" static="1"><f a="this:key">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<x path="Int"/>
+	<a>
+		<y><c path="hyperKitGL.iterArr.ArrayPairs.T"/></y>
+		<x><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+	</a>
+</f></getObj>
+	<reverse public="1" get="inline" set="null" line="16" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+</f></reverse>
+</class></impl>
+	</abstract>
+	<class path="hyperKitGL.iterArr._ArrayPairs.ArrayPairs_Impl_" params="" file="src/hyperKitGL/iterArr/ArrayPairs.hx" private="1" module="hyperKitGL.iterArr.ArrayPairs" final="1">
+		<_new public="1" set="method" line="4" static="1">
+			<f a="arr">
+				<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+				<x path="hyperKitGL.iterArr.ArrayPairs"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+			</f>
+			<meta><m n=":noCompletion"/></meta>
+		</_new>
+		<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+		<get_length get="inline" set="null" line="6" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<x path="Int"/>
+</f></get_length>
+		<access get="inline" set="null" line="7" static="1">
+			<f a="this:key">
+				<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+				<x path="Int"/>
+				<a>
+					<y><c path="hyperKitGL.iterArr.ArrayPairs.T"/></y>
+					<x><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+				</a>
+			</f>
+			<meta><m n=":arrayAccess"/></meta>
+		</access>
+		<getObj public="1" get="inline" set="null" line="11" static="1"><f a="this:key">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<x path="Int"/>
+	<a>
+		<y><c path="hyperKitGL.iterArr.ArrayPairs.T"/></y>
+		<x><c path="hyperKitGL.iterArr.ArrayPairs.T"/></x>
+	</a>
+</f></getObj>
+		<reverse public="1" get="inline" set="null" line="16" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayPairs.T"/></c>
+</f></reverse>
+	</class>
+	<abstract path="hyperKitGL.iterArr.ArrayTriple" params="T" file="src/hyperKitGL/iterArr/ArrayTriple.hx">
+		<this><c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c></this>
+		<meta><m n=":transitive"/></meta>
+		<impl><class path="hyperKitGL.iterArr._ArrayTriple.ArrayTriple_Impl_" params="" file="src/hyperKitGL/iterArr/ArrayTriple.hx" private="1" module="hyperKitGL.iterArr.ArrayTriple" final="1">
+	<_new public="1" set="method" line="4" static="1">
+		<f a="arr">
+			<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+			<x path="hyperKitGL.iterArr.ArrayTriple"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></x>
+		</f>
+		<meta><m n=":noCompletion"/></meta>
+	</_new>
+	<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+	<get_length get="inline" set="null" line="6" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<x path="Int"/>
+</f></get_length>
+	<access get="inline" set="null" line="7" static="1">
+		<f a="this:key">
+			<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+			<x path="Int"/>
+			<a>
+				<c><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+				<b><c path="hyperKitGL.iterArr.ArrayTriple.T"/></b>
+				<a><c path="hyperKitGL.iterArr.ArrayTriple.T"/></a>
+			</a>
+		</f>
+		<meta><m n=":arrayAccess"/></meta>
+	</access>
+	<getObj public="1" get="inline" set="null" line="11" static="1"><f a="this:key">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<x path="Int"/>
+	<a>
+		<c><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+		<b><c path="hyperKitGL.iterArr.ArrayTriple.T"/></b>
+		<a><c path="hyperKitGL.iterArr.ArrayTriple.T"/></a>
+	</a>
+</f></getObj>
+	<reverse public="1" get="inline" set="null" line="16" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+</f></reverse>
+</class></impl>
+	</abstract>
+	<class path="hyperKitGL.iterArr._ArrayTriple.ArrayTriple_Impl_" params="" file="src/hyperKitGL/iterArr/ArrayTriple.hx" private="1" module="hyperKitGL.iterArr.ArrayTriple" final="1">
+		<_new public="1" set="method" line="4" static="1">
+			<f a="arr">
+				<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+				<x path="hyperKitGL.iterArr.ArrayTriple"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></x>
+			</f>
+			<meta><m n=":noCompletion"/></meta>
+		</_new>
+		<length public="1" get="accessor" set="null" static="1"><x path="Int"/></length>
+		<get_length get="inline" set="null" line="6" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<x path="Int"/>
+</f></get_length>
+		<access get="inline" set="null" line="7" static="1">
+			<f a="this:key">
+				<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+				<x path="Int"/>
+				<a>
+					<c><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+					<b><c path="hyperKitGL.iterArr.ArrayTriple.T"/></b>
+					<a><c path="hyperKitGL.iterArr.ArrayTriple.T"/></a>
+				</a>
+			</f>
+			<meta><m n=":arrayAccess"/></meta>
+		</access>
+		<getObj public="1" get="inline" set="null" line="11" static="1"><f a="this:key">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<x path="Int"/>
+	<a>
+		<c><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+		<b><c path="hyperKitGL.iterArr.ArrayTriple.T"/></b>
+		<a><c path="hyperKitGL.iterArr.ArrayTriple.T"/></a>
+	</a>
+</f></getObj>
+		<reverse public="1" get="inline" set="null" line="16" static="1"><f a="this">
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+	<c path="Array"><c path="hyperKitGL.iterArr.ArrayTriple.T"/></c>
+</f></reverse>
+	</class>
+	<class path="hyperKitGL.splitter.SpaceSplitter" params="" file="src/hyperKitGL/splitter/SpaceSplitter.hx"><parse public="1" get="inline" set="null" line="6" static="1"><f a="str">
+	<c path="String"/>
+	<c path="Array"><c path="Array"><c path="String"/></c></c>
+</f></parse></class>
+	<class path="hyperKitGL.splitter.StringCodeIterator" params="" file="src/hyperKitGL/splitter/StringCodeIterator.hx">
+		<str expr="&quot;&quot;">
+			<c path="String"/>
+			<meta><m n=":value"><e>""</e></m></meta>
+		</str>
+		<b><c path="StringBuf"/></b>
+		<pos public="1"><x path="Int"/></pos>
+		<c public="1"><x path="Int"/></c>
+		<last2 public="1"><c path="String"/></last2>
+		<last public="1"><c path="String"/></last>
+		<length public="1"><x path="Int"/></length>
+		<addChar public="1" get="inline" set="null" line="18"><f a=""><x path="Void"/></f></addChar>
+		<toStr public="1" get="inline" set="null" line="22"><f a=""><c path="String"/></f></toStr>
+		<isRepeat public="1" get="inline" set="null" line="28"><f a=""><x path="Bool"/></f></isRepeat>
+		<resetBuffer public="1" get="inline" set="null" line="34"><f a=""><x path="Void"/></f></resetBuffer>
+		<reset public="1" get="inline" set="null" line="38"><f a=""><x path="Void"/></f></reset>
+		<hasNext public="1" get="inline" set="null" line="42"><f a=""><x path="Bool"/></f></hasNext>
+		<next public="1" get="inline" set="null" line="46"><f a=""><x path="Int"/></f></next>
+		<new public="1" set="method" line="11">
+			<f a="str_:?pos_" v=":0">
+				<c path="String"/>
+				<x path="Int"/>
+				<x path="Void"/>
+			</f>
+			<meta><m n=":value"><e>{ pos_ : 0 }</e></m></meta>
+		</new>
+		<meta><m n=":directlyUsed"/></meta>
 	</class>
 	<class path="js.Boot" params="" file="/usr/local/lib/haxe/std/js/Boot.hx">
 		<__string_rec set="method" line="58" static="1">

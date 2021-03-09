@@ -2,11 +2,13 @@
 
 hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, but can be used separately for working with WebGL and Canvas.
 
+### See [trilateral3](https://github.com/nanjizal/trilateral3) where this library is typically used.
+
 ## notes
 
 - hyperKitGL collates aspects of my [htmlHelper](https://github.com/nanjizal/htmlHelper), [kitGL](https://github.com/nanjizal/kitGL), and [dsHelper](https://github.com/nanjizal/dsHelper).
 
-- Ideally you can get started by inheriting **PlyMix**.
+- Ideally you can get started by inheriting [**PlyMix**](https://github.com/nanjizal/hyperKitGL/blob/main/src/hyperKitGL/PlyMix.js.hx).
 
 - [hyperKitGL API code documentation](https://nanjizal.github.io/hyperKitGL/pages/)
 

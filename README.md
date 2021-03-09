@@ -20,7 +20,7 @@ hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, bu
 
 - For using trilateral3 against other toolkits look at kitGL and dsHelper as they provide more details.
 
-- For usage please keep an eye on the evolving examples [hyperKitGLSamplesr](https://github.com/TrilateralX/HyperKitGLsamples).
+- For usage please keep an eye on the evolving examples [hyperKitGLSamples](https://github.com/TrilateralX/HyperKitGLsamples).
 
 ## known issues
 

@@ -109,7 +109,7 @@ class PlyMix{
     }
     inline
     function setup(){
-        trace(' setup ');
+        //trace(' setup ');
         // don't use projection matrix for now
         setupProgramTexture();
         setupProgramColor();

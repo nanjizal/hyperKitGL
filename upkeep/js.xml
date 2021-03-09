@@ -2819,6 +2819,7 @@
 	</class>
 	<class path="hyperKitGL.PlyMix" params="" file="src/hyperKitGL/PlyMix.js.hx">
 		<gl public="1"><c path="js.html.webgl.RenderingContext"/></gl>
+		<animate public="1"><x path="Bool"/></animate>
 		<vertexPosition final="1" expr="&quot;vertexPosition&quot;">
 			<c path="String"/>
 			<meta><m n=":value"><e>"vertexPosition"</e></m></meta>
@@ -2848,6 +2849,10 @@
 			<c path="Array"><x path="Float"/></c>
 			<meta><m n=":value"><e>[1., 0., 0., 0., 1., 0., 0., 0., 1.]</e></m></meta>
 		</transformUVArr>
+		<hasImage public="1" expr="true">
+			<x path="Bool"/>
+			<meta><m n=":value"><e>true</e></m></meta>
+		</hasImage>
 		<vertexTexture final="1" expr="&quot;vertexTexture&quot;">
 			<c path="String"/>
 			<meta><m n=":value"><e>"vertexTexture"</e></m></meta>
@@ -2871,41 +2876,41 @@
 			<x path="hyperKitGL.ProgramMode"/>
 			<meta><m n=":value"><e>ModeNone</e></m></meta>
 		</mode>
-		<creategl get="inline" set="null" line="73"><f a=""><x path="Void"/></f></creategl>
-		<setProgramMode public="1" set="method" line="78"><f a="modeNew">
+		<creategl get="inline" set="null" line="81"><f a=""><x path="Void"/></f></creategl>
+		<setProgramMode public="1" set="method" line="86"><f a="modeNew">
 	<x path="hyperKitGL.ProgramMode"/>
 	<x path="Bool"/>
 </f></setProgramMode>
-		<setup get="inline" set="null" line="103"><f a=""><x path="Void"/></f></setup>
-		<setupProgramColor get="inline" set="null" line="114"><f a=""><x path="Void"/></f></setupProgramColor>
-		<setupProgramTexture get="inline" set="null" line="118"><f a=""><x path="Void"/></f></setupProgramTexture>
-		<setupInputColor get="inline" set="null" line="122"><f a=""><x path="Void"/></f></setupInputColor>
-		<setupInputTexture get="inline" set="null" line="129"><f a=""><x path="Void"/></f></setupInputTexture>
-		<changeImage public="1" set="method" line="139"><f a="img_">
+		<setup get="inline" set="null" line="111"><f a=""><x path="Void"/></f></setup>
+		<setupProgramColor get="inline" set="null" line="126"><f a=""><x path="Void"/></f></setupProgramColor>
+		<setupProgramTexture get="inline" set="null" line="130"><f a=""><x path="Void"/></f></setupProgramTexture>
+		<setupInputColor get="inline" set="null" line="134"><f a=""><x path="Void"/></f></setupInputColor>
+		<setupInputTexture get="inline" set="null" line="141"><f a=""><x path="Void"/></f></setupInputTexture>
+		<changeImage public="1" set="method" line="151"><f a="img_">
 	<c path="js.html.Image"/>
 	<x path="Void"/>
 </f></changeImage>
-		<setBackgroundShapeColor public="1" set="method" line="142"><f a="red:green:blue:alpha">
+		<setBackgroundShapeColor public="1" set="method" line="154"><f a="red:green:blue:alpha">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></setBackgroundShapeColor>
-		<draw public="1" set="method" line="148"><f a=""><x path="Void"/></f></draw>
-		<render get="inline" set="null" line="152"><f a=""><x path="Void"/></f></render>
-		<drawTextureShape public="1" set="method" line="158"><f a="start:end:bgColor">
+		<draw public="1" set="method" line="160"><f a=""><x path="Void"/></f></draw>
+		<render get="inline" set="null" line="164"><f a=""><x path="Void"/></f></render>
+		<drawTextureShape public="1" set="method" line="170"><f a="start:end:bgColor">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawTextureShape>
-		<drawColorShape public="1" set="method" line="168"><f a="start:end">
+		<drawColorShape public="1" set="method" line="180"><f a="start:end">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawColorShape>
-		<drawData public="1" set="method" line="173"><f a="program:dataGL:start:end:len">
+		<drawData public="1" set="method" line="185"><f a="program:dataGL:start:end:len">
 	<c path="js.html.webgl.Program"/>
 	<x path="hyperKitGL.DataGL"/>
 	<x path="Int"/>
@@ -2913,15 +2918,21 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawData>
-		<withAlpha public="1" get="inline" set="null" line="180"><f a=""><x path="Void"/></f></withAlpha>
-		<notAlpha public="1" get="inline" set="null" line="184"><f a=""><x path="Void"/></f></notAlpha>
-		<renderDraw public="1" set="method" line="189"><f a=""><x path="Void"/></f></renderDraw>
-		<setAnimate get="inline" set="null" line="191"><f a=""><x path="Void"/></f></setAnimate>
-		<new public="1" set="method" line="65"><f a="width_:height_">
-	<x path="Int"/>
-	<x path="Int"/>
-	<x path="Void"/>
-</f></new>
+		<withAlpha public="1" get="inline" set="null" line="192"><f a=""><x path="Void"/></f></withAlpha>
+		<notAlpha public="1" get="inline" set="null" line="196"><f a=""><x path="Void"/></f></notAlpha>
+		<renderDraw public="1" set="method" line="201"><f a=""><x path="Void"/></f></renderDraw>
+		<renderOnce public="1" set="method" line="203"><f a=""><x path="Void"/></f></renderOnce>
+		<setAnimate get="inline" set="null" line="207"><f a=""><x path="Void"/></f></setAnimate>
+		<new public="1" set="method" line="67">
+			<f a="width_:height_:?hasImage:?animate" v="::true:true">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Bool"/>
+				<x path="Bool"/>
+				<x path="Void"/>
+			</f>
+			<meta><m n=":value"><e>{ animate : true, hasImage : true }</e></m></meta>
+		</new>
 	</class>
 	<class path="hyperKitGL.Sheet" params="" file="src/hyperKitGL/Sheet.js.hx">
 		<pixelRatio public="1"><x path="Float"/></pixelRatio>

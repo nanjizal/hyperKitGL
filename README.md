@@ -32,4 +32,4 @@ hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, bu
 
 - **PlyMix** has aspects when switching between texture and image shaders, which sometimes requires ```drawColorShape( 0, 0 );``` to need be called in the render loop after drawing a texture.
 
-- **PlyMix** if no images need loading currently you have to manually call the setAnimate method in the **draw** method.
+- **PlyMix** if no images need loading currently you have to manually call the ```setAnimate()``` method in the **draw** method.

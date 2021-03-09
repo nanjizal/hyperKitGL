@@ -22,7 +22,7 @@ function setAsRGB( gl: GL, img: Image ){
 }
 inline
 function updateAsARGB( gl: GL, texture: Texture, img: Image ){
-    trace(' IMAGE ' + img );
+    //trace(' IMAGE ' + img );
     //gl.bindTexture( GL.TEXTURE_2D, texture );
     gl.texSubImage2D( GL.TEXTURE_2D, 0, 0, 0, GL.RGBA, GL.UNSIGNED_BYTE, img );
     //textureStandard( gl );

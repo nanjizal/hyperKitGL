@@ -6,7 +6,7 @@ hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, bu
 
 - hyperKitGL collates aspects of my [htmlHelper](https://github.com/nanjizal/htmlHelper), [kitGL](https://github.com/nanjizal/kitGL), and [dsHelper](https://github.com/nanjizal/dsHelper).
 
-- Ideally you can get started by inheriting PlyMix.
+- Ideally you can get started by inheriting **PlyMix**.
 
 - [hyperKitGL API code documentation](https://nanjizal.github.io/hyperKitGL/pages/)
 

@@ -2,12 +2,24 @@
 
 hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, but can be used separately for working with WebGL and Canvas.
 
-hyperKitGL collates aspects of my htmlHelper, kitGL, and dsHelper.
+## notes
 
-Ideally you can get started by inheriting PlyMix.
+- hyperKitGL collates aspects of my htmlHelper, kitGL, and dsHelper.
 
-[hyperKitGL API code documentation](https://nanjizal.github.io/hyperKitGL/pages/)
+- Ideally you can get started by inheriting PlyMix.
 
-no dependancies, while it works well it is likely not production quality.
+- [hyperKitGL API code documentation](https://nanjizal.github.io/hyperKitGL/pages/)
 
-[release v0.0.1-alpha](https://github.com/nanjizal/hyperKitGL/releases)
+- no dependancies.
+
+- works well but may need more work for production quality.
+
+- features experimental aspects, to help explore Webgl and Canvas.
+
+- [release v0.0.1-alpha](https://github.com/nanjizal/hyperKitGL/releases)
+
+## known issues
+
+- Sheet has some mouse support but it's only currently been tested on mac retina and known to be out elsewhere.
+
+- a projection matrix is not currently wired up in PlyMix against shaders.

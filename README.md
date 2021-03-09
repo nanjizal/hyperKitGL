@@ -24,7 +24,7 @@ hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, bu
 
 ## known issues
 
-- **Sheet** has some mouse interaction support, but it's only currently been tested on mac retina and known to have scale issues elsewhere. Welcome pull requests.
+- [**Sheet**](https://github.com/nanjizal/hyperKitGL/blob/main/src/hyperKitGL/Sheet.js.hx#L67) has some mouse interaction support, but it's only currently been tested on mac retina and known to have scale issues elsewhere. Welcome pull requests.
 
 - A projection matrix is not currently wired up in PlyMix against shaders, so currently limited to 2D, but likely to be added soon.
 

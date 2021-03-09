@@ -9,3 +9,5 @@ Ideally you can get started by inheriting PlyMix.
 [hyperKitGL API code documentation](https://nanjizal.github.io/hyperKitGL/pages/)
 
 no dependancies.
+
+[release v0.0.1-alpha](https://github.com/nanjizal/hyperKitGL/releases)

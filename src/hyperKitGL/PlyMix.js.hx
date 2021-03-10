@@ -66,7 +66,7 @@ class PlyMix{
     public var mode: ProgramMode = ModeNone;
     public
     function new( width_: Int, height_: Int, ?hasImage: Bool = true, ?animate: Bool = true ){
-        animate = this.animate;
+        this.animate = animate;
         width  = width_;
         height = height_;
         creategl();

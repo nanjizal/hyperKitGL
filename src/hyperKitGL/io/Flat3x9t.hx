@@ -35,7 +35,7 @@ abstract Flat3x9t( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth 
     }
     public inline 
     function toEnd( id: Int, len: Int ){
-        return this.rangeToEnd( id*28, Std.int( 28*len ), 27*this.size );
+        return this.rangeToEnd( id*28, Std.int( 28*len ), 28*this.size );
     }
     public inline 
     function toStart( id: Int, len: Int ){
@@ -43,6 +43,6 @@ abstract Flat3x9t( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth 
     }
     public inline
     function swap( id0: Int, id1: Int, len: Int ){
-        return this.rangeSwitch( id0*21, id1*21, Std.int( 21 * len ) );
+        return this.rangeSwitch( id0*28, id1*28, Std.int( 28 * len ) );
     }
 }

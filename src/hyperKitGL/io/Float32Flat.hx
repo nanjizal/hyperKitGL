@@ -41,12 +41,12 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
         this[1] = 0.; // init useful size
     }
     public var size( get, set ): Int;
-    
+    inline
     function get_size(): Int {
         return Std.int( this[ 1 ] );
     }
     // set to make sure compiler does no just use the set value.
-    
+    inline
     function set_size( id: Int ): Int {
         pos = cast id;
         return id;
@@ -68,9 +68,36 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     }
     inline
     function set_pos( pos_: Float ): Float {
+        // if too small resized to 1/4 larger, is this ideal?
+        if( pos_ >= this.length ) resize( Math.ceil( this.length*0.25 ) );
         this[ 0 ] = pos_;
         updateLen();
         return pos_;
+    }
+    public inline
+    function resize( l: Int ){
+        var p = this[ 0 ];
+        var s = this[ 1 ];
+        var sInt:Null<Int> = Std.int( this[ 1 ] );
+        var flat = new Float32Flat( l - 2 );
+        var arr = this.subarray( 2, sInt );
+        for( i in 0...sInt ){
+            this[ i + 2 ] = arr[ i ];
+        }
+        this[ 0 ] = p;
+        this[ 1 ] = s;
+        this = flat;
+    }
+    public inline // likely not used
+    function resize0( l: Int ){
+        resize( l );
+        this[0] = 0;
+    }
+    public inline // use if you want to optimise size.
+    function optimiseLength(): Int {
+        var targetLen: Int = cast this[ 1 ] + 2;
+        resize( targetLen );
+        return targetLen;
     }
     inline function updateLen() {
         if( this[ 0 ] > ( this[ 1 ] - 1 ) ) {

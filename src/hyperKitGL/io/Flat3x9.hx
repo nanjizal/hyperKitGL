@@ -26,6 +26,7 @@ abstract Flat3x9( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth {
     inline
     function set_index( id: Int ): Int {
         this.index = id;
+        //this.fits( id*27 );
         return id;
     }
     public inline

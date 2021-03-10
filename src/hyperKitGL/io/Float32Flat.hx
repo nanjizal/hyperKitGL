@@ -17,6 +17,7 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     @:op([]) //@:arrayAccess
     public inline
     function readItem( k: Int ): Float {
+      fits( k );
       return this[ k + 2 ];
     }
     /**
@@ -30,6 +31,7 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     @:op([]) //@:arrayAccess
     public inline
     function writeItem( k: Int, v: Float ): Float {
+        fits( k );
         this[ k + 2 ] = v;
         return v;
     }
@@ -68,39 +70,47 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     }
     inline
     function set_pos( pos_: Float ): Float {
-        // remove autosize for now.
-        // if( pos_ >= this.length ) resize( Math.ceil( this.length*2 ) );
         this[ 0 ] = pos_;
         updateLen();
         return pos_;
     }
-    /*
-    public inline
+  	public inline 
+    function fits( k: Int ): Bool {
+        return if( k > this.length - 3 ) {
+            resize( Math.ceil( k * 2 + 2 ) );
+            false;
+        } else {
+            true;
+        }
+    }
+  public inline
     function resize( l: Int ){
         var p = this[ 0 ];
         var s = this[ 1 ];
         var sInt:Null<Int> = Std.int( this[ 1 ] );
-        var flat = new Float32Flat( l - 2 );
-        var arr = this.subarray( 2, sInt );
+        var arr = this.subarray( 2, this.length );
+        this = new Float32Flat( l );
         for( i in 0...sInt ){
             this[ i + 2 ] = arr[ i ];
         }
         this[ 0 ] = p;
         this[ 1 ] = s;
-        this = flat;
+        trace( 'resize now ' + (l + 2) );
     }
+   /*
     public inline // likely not used
     function resize0( l: Int ){
         resize( l );
         this[0] = 0;
     }
+  */
     public inline // use if you want to optimise size.
     function optimiseLength(): Int {
-        var targetLen: Int = cast this[ 1 ] + 2;
+        var targetLen: Int = size + 2;
         resize( targetLen );
         return targetLen;
     }
-    */
+    
     inline function updateLen() {
         if( this[ 0 ] > ( this[ 1 ] - 1 ) ) {
             this[ 1 ] = this[ 0 ];
@@ -111,6 +121,7 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     public inline
     function next(): Float {
         pos = pos + 1.;
+        //fits( Std.int( pos ) );
         return pos;
     }
     /*

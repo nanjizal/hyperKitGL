@@ -58,16 +58,7 @@ function shaderSetup( gl: GL
      }
      return shader;
 }
-inline 
-function passIndicesToShader( gl: GL, indices: Array<Int> ){
-        var indexBuffer = gl.createBuffer(); // triangle indicies data 
-        var arrBuffer = GL.ELEMENT_ARRAY_BUFFER;
-        gl.bindBuffer( arrBuffer, indexBuffer );
-        gl.bufferData( arrBuffer
-                     , new Uint16Array( indices )
-                     , GL.STATIC_DRAW );
-        gl.bindBuffer( arrBuffer, null );
-}
+
 // just used for docs
 class HelpGL {
     public var clearAll_:( gl: GL, width: Int, height: Int ) -> Void =     clearAll;
@@ -77,7 +68,5 @@ class HelpGL {
     public var shaderSetup_:     ( gl:           GL
                                  , shaderType:   Int
                                  , str:          String ) -> Shader  =  shaderSetup;
-    public var passIndicesToShader_: ( gl:           GL
-                            , indices:   Array<Int> ) -> Void = passIndicesToShader;
 }
 #end

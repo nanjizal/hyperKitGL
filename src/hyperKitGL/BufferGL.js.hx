@@ -7,8 +7,9 @@ import js.html.webgl.Program;
 import haxe.io.Float32Array;
 import hyperKitGL.BufferGL;
 import hyperKitGL.GL;
-
-@:transitive
+import js.lib.Uint16Array;
+import js.lib.Uint8Array;
+//@:transitive
 inline
 function bufferSetup( gl:           GL
                     , program:      Program
@@ -23,6 +24,28 @@ function bufferSetup( gl:           GL
     //gl.bindBuffer( RenderingContext.ARRAY_BUFFER, null );
     return buf;	
 }
+
+// change to DYNAMIC_DRAW
+inline 
+function passIndicesToShader( gl: GL, indices: Array<Int>, ?isDynamic: Bool = false ): Buffer {
+        var buf: Buffer = gl.createBuffer(); // triangle indicies data 
+        var staticDraw  = GL.STATIC_DRAW;
+        var dynamicDraw = GL.DYNAMIC_DRAW;
+        var arrBuffer = GL.ELEMENT_ARRAY_BUFFER;
+        gl.bindBuffer( arrBuffer, buf );
+        if( isDynamic ){ 
+            gl.bufferData( arrBuffer
+                         , new Uint16Array( indices )
+                         , dynamicDraw );
+        } else {
+            gl.bufferData( arrBuffer
+                         , new Uint16Array( indices )
+                         , staticDraw );
+        }
+        gl.bindBuffer( arrBuffer, null );
+        return buf;
+}
+
 inline
 function dataSet( gl: GL, data: Float32Array, isDraw: Int ){
     var arrayBuffer = GL.ARRAY_BUFFER;
@@ -168,7 +191,10 @@ class BufferGL{
     public var bufferSetup_: ( gl: GL
                              , program: Program
                              , data: Float32Array
-                             , ?isDynamic: Bool )->Buffer = bufferSetup;
+                             , ?isDynamic: Bool ) -> Buffer = bufferSetup;
+    public var passIndicesToShader_: ( gl:           GL
+                                     , indices:   Array<Int>
+                                     , ?isDynamic: Bool ) -> Buffer = passIndicesToShader;
     public var interleaveXYZ_RGBA_: ( gl:       RenderingContext
                                     , program:   Program 
                                     , data:      Float32Array

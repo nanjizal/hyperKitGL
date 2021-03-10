@@ -20,6 +20,9 @@ import js.html.webgl.RenderingContext;
 import js.html.webgl.Program;
 import js.html.webgl.Texture;
 import hyperKitGL.GL;
+import js.lib.Uint16Array;
+import js.lib.Uint8Array;
+
 enum abstract ProgramMode(Int) {
   var ModeNone;
   var ModeColor;
@@ -42,6 +45,7 @@ class PlyMix{
     public var dataGLtexture:    DataGL;
     public var imageLoader:      ImageLoader;
     public var bufTexture:       Buffer;
+    public var bufIndices:       Buffer;
     var indicesTexture           = new Array<Int>();
     public var img:              Image;
     public var tex:              Texture;
@@ -99,6 +103,7 @@ class PlyMix{
                 case ModeTexture:
                     gl.useProgram( programTexture );
                     gl.bindBuffer( GL.ARRAY_BUFFER, bufTexture );
+                    gl.bindBuffer( GL.ARRAY_BUFFER, bufIndices );
                     updateBufferXYZ_RGBA_UV( gl, programTexture, vertexPosition, vertexColor, vertexTexture );
                     mode = ModeTexture;
                 default:
@@ -144,9 +149,15 @@ class PlyMix{
                         , programTexture
                         , cast dataGLtexture.data
                         , vertexPosition, vertexColor, vertexTexture, true );
+        buildIndicesTexture( dataGLtexture.size );
+        bufIndices = passIndicesToShader( gl, indicesTexture );
+    }
+    inline
+    function buildIndicesTexture( size: Int ){
         var count = 0;
-        for( i in 0...dataGLtexture.size ) for( k in 0...3 ) indicesTexture.push( count++ );
-        passIndicesToShader( gl, indicesTexture );
+        var indicesTexture           = new Array<Int>();
+        for( i in 0...size ) for( k in 0...3 ) indicesTexture.push( count++ );
+        return indicesTexture;
     }
     public function changeImage( img_: Image ){
         updateAsARGB( gl, tex, img_ );
@@ -174,6 +185,11 @@ class PlyMix{
             imageUniform( gl, programTexture, uniformImage );
             transformUV( gl, programTexture, uvTransform, transformUVArr );
         }
+        var dynamicDraw = GL.DYNAMIC_DRAW;
+        buildIndicesTexture( start - end );
+        gl.bufferData( GL.ELEMENT_ARRAY_BUFFER
+                     , new Uint16Array( indicesTexture  )
+                     , dynamicDraw );
         drawData( programTexture, dataGLtexture, start, end, 27 );
     }
     public

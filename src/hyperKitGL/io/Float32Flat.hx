@@ -68,12 +68,13 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     }
     inline
     function set_pos( pos_: Float ): Float {
-        // if too small resized to 1/4 larger, is this ideal?
-        if( pos_ >= this.length ) resize( Math.ceil( this.length*0.25 ) );
+        // remove autosize for now.
+        // if( pos_ >= this.length ) resize( Math.ceil( this.length*2 ) );
         this[ 0 ] = pos_;
         updateLen();
         return pos_;
     }
+    /*
     public inline
     function resize( l: Int ){
         var p = this[ 0 ];
@@ -99,6 +100,7 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
         resize( targetLen );
         return targetLen;
     }
+    */
     inline function updateLen() {
         if( this[ 0 ] > ( this[ 1 ] - 1 ) ) {
             this[ 1 ] = this[ 0 ];

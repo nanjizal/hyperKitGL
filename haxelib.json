@@ -4,7 +4,7 @@
     "license"      : "MIT",
     "tags"         : ["WebGL","javascript","js" ],
     "description"  : "Kit to help with WebGL",
-    "version"      : "0.0.1-alpha",
+    "version"      : "0.0.2-alpha",
     "releasenote"  : "See https://github.com/nanjizal/hyperKitGL/blob/master/CHANGELOG.md",
     "classPath"    : "src",
     "contributors" : ["Nanjizal"],

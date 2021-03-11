@@ -18,7 +18,7 @@ hyperKitGL provides WebGL, Html5 and Float32Array structures for trilateral3, bu
 
 - features experimental aspects, ideal to help explore Webgl and Canvas.
 
-- [release v0.0.1-alpha](https://github.com/nanjizal/hyperKitGL/releases)
+- [release v0.0.2-alpha](https://github.com/nanjizal/hyperKitGL/releases/tag/v0.0.2-alpha)
 
 - For using trilateral3 against other toolkits look at kitGL and dsHelper as they provide more details.
 

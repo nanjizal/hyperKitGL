@@ -1,23 +1,22 @@
 package hyperKitGL.io;
-import hyperKitGL.io.Float32Flat;
-import hyperKitGL.io.Float32Array;
-import hyperKitGL.io.Float32FlatDepth;
+import hyperKitGL.io.ArrayFlat;
+import hyperKitGL.io.ArrayFlatDepth;
 @:transitive
 @:forward
-abstract Flat3x9( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth {
+abstract Array3x9( ArrayFlatDepth ) {
     @:op([]) public inline 
     function readItem( k: Int ): Float {
         return this.readItem( index*27 + k );
     }
-    @:op([])
+    //@:op([]) 
     public inline 
     function writeItem( k: Int, v: Float ): Float {
         this.writeItem( index*27 + k, v );
         return v;
     }
     public inline 
-    function new( len: Int ){
-        this = new Float32FlatDepth( len );
+    function new(){
+        this = new ArrayFlatDepth();
     }
     public var index( get, set ): Int;
     inline
@@ -31,15 +30,19 @@ abstract Flat3x9( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth {
     }
     public inline
     function getArray(): Float32Array {
-        return this.subarray( 2, this.size*27 + 2 );
+        var fa32 = new Float32Array( this.length - 1 );
+        for( i in 0...( this.length - 1 ) ){
+            fa32[ i ] = this.readItem( i );
+        }
+        return fa32;
     }
     public inline 
     function toEnd( id: Int, len: Int ){
-        return this.rangeToEnd( id*27, Std.int( 27*len ), 27 );
+        return this.rangeToEnd( id*27, Std.int( 27 * len ) , this.size );
     }
     public inline 
     function toStart( id: Int, len: Int ){
-        return this.rangeToStart( id*27, Std.int( 27*len ) );
+        return this.rangeToStart( id*27, Std.int( 27 * len ) );
     }
     public inline
     function swap( id0: Int, id1: Int, len: Int ){

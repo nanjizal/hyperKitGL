@@ -1,12 +1,11 @@
 package hyperKitGL.io;
-import hyperKitGL.io.Float32Array;
-import hyperKitGL.io.Float32Flat;
+import hyperKitGL.io.ArrayFlat;
 @:transitive
 @:forward
-abstract Float32FlatDepth( Float32Flat )/* to Float32Array from Float32Array*/ {
+abstract ArrayFlatDepth( ArrayFlat )/* to ArrayFlat from ArrayFlat*/ {
     public inline
-    function new( len: Int ){
-        this = new Float32Flat( len );
+    function new(){
+        this = new ArrayFlat();
     }
     public
     function rangeToEnd( starting: Int, totalLen: Int, section: Int ){
@@ -18,18 +17,16 @@ abstract Float32FlatDepth( Float32Flat )/* to Float32Array from Float32Array*/ {
             temp[ count++ ] = this[ i ];
         }
         // shift top half values down to fill hole
-        var left = section * this.size - ending;
+        var left = section - ending;
         for( i in 0...left ) {
-            //this[ starting + i ] = this[ ending + i ];
-            this.writeItem( starting + i, this[ ending + i ] );
+            this[ starting + i ] = this[ ending + i ];
         }
         // draw at end.
-        var last = section * this.size;
+        var last = section;
         var reserveTop = last - totalLen;
         count = 0;
         for( i in reserveTop...last ) {
-            //this.[ i ] = temp[ count++ ];
-            this.writeItem( i, temp[ count++ ] );
+            this[ i ] = temp[ count++ ];
         }
         temp = null;
         return true;
@@ -48,14 +45,12 @@ abstract Float32FlatDepth( Float32Flat )/* to Float32Array from Float32Array*/ {
         // shift bottom half values up to fill hole from top
         count = totalLen;
         for( i in 0...starting ){
-            //this[ ending - 1 - i ] = this[ starting - 1 - i ];
-            this.writeItem( ending - 1 - i, this[ starting - 1 - i ] );
+            this[ ending - 1 - i ] = this[ starting - 1 - i ];
         }
         // add values to start
         count = 0;
         for( i in 0...totalLen ){
-            //this[ i ] = temp[ count - 2 ];
-            this.writeItem( i, temp[ count - 2 ] );
+            this[ i ] = temp[ count - 2 ];
             count++;
         }
         temp = null;
@@ -69,10 +64,8 @@ abstract Float32FlatDepth( Float32Flat )/* to Float32Array from Float32Array*/ {
             for( i in 0...totalLen ){
                 temp0 = this[ start0 + i ];
                 temp1 = this[ start1 + i ];
-                //this[ start0 + i ] = temp1;
-                //this[ start1 + i ] = temp0;
-                this.writeItem( start0 + i, temp1 );
-                this.writeItem( start1 + i, temp0 );
+                this[ start0 + i ] = temp1;
+                this[ start1 + i ] = temp0;
             }
             return true;
         } else {

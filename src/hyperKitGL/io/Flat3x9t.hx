@@ -10,7 +10,8 @@ abstract Flat3x9t( Float32FlatDepth ) from Float32FlatDepth to Float32FlatDepth 
     function readItem( k: Int ): Float {
         return this.readItem( index*28 + k );
     }
-    @:op([]) public inline 
+    @:op([])
+    public inline 
     function writeItem( k: Int, v: Float ): Float {
         this.writeItem( index*28 + k, v );
         return v;

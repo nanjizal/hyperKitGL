@@ -17,7 +17,6 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
     @:op([]) //@:arrayAccess
     public inline
     function readItem( k: Int ): Float {
-      fits( k );
       return this[ k + 2 ];
     }
     /**
@@ -28,14 +27,12 @@ abstract Float32Flat( Float32Array )/* to Float32Array from Float32Array*/ {
      * ... ff[0] == 1.; }) == true
      * </code></pre>
      */
-    @:op([]) //@:arrayAccess
+    //  @:op([]) //@:arrayAccess
     public inline
     function writeItem( k: Int, v: Float ): Float {
-        fits( k );
         this[ k + 2 ] = v;
         return v;
     }
-    
     public inline
     function new( len: Int ){
         this = new Float32Array( len + 2 );

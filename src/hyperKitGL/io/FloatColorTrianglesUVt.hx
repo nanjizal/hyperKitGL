@@ -16,7 +16,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 0 ];
     }
     function set_ax( v: Float ): Float {
-        this[ 0 ] = v;
+        this.writeItem( 0, v );
         return v;
     }
     public var ay( get, set ): Float;
@@ -24,7 +24,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 1 ];
     }
     function set_ay( v: Float ): Float {
-        this[ 1 ] = v;
+        this.writeItem( 1, v );
         return v;
     }
     public var az( get, set ): Float;
@@ -32,7 +32,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 2 ];
     }
     function set_az( v: Float ): Float {
-        this[ 2 ] = v;
+        this.writeItem( 2, v );
         return v;
     }
     
@@ -41,7 +41,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 3 ];
     }
     function set_redA( v: Float ): Float {
-        this[ 3 ] = v;
+        this.writeItem( 3, v );
         return v;
     }
     
@@ -52,7 +52,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_greenA( v: Float ): Float {
-        this[ 4 ] = v;
+        this.writeItem( 4, v );
         return v;
     }
     public var blueA( get, set ): Float;
@@ -62,7 +62,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_blueA( v: Float ): Float {
-        this[ 5 ] = v;
+        this.writeItem( 5, v );
         return v;
     }
     public var alphaA( get, set ): Float;
@@ -72,7 +72,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_alphaA( v: Float ): Float {
-        this[ 6 ] = v;
+        this.writeItem( 6, v );
         return v;
     }
     public var uA( get, set ): Float;
@@ -82,7 +82,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_uA( v: Float ): Float {
-        this[ 7 ] = v;
+        this.writeItem( 7, v );
         return v;
     }
     public var vA( get, set ): Float;
@@ -92,7 +92,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_vA( v: Float ): Float {
-        this[ 8 ] = v;
+        this.writeItem( 8, v );
         return v;
     }
     
@@ -101,7 +101,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 9 ];
     }
     function set_bx( v: Float ): Float {
-        this[ 9 ] = v;
+        this.writeItem( 9, v );
         return v;
     }
     public var by( get, set ): Float;
@@ -109,7 +109,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 10 ];
     }
     function set_by( v: Float ): Float {
-        this[ 10 ] = v;
+        this.writeItem( 10, v );
         return v;
     }
     public var bz( get, set ): Float;
@@ -117,7 +117,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 11 ];
     }
     function set_bz( v: Float ): Float {
-        this[ 11 ] = v;
+        this.writeItem( 11, v );
         return v;
     }
     
@@ -126,7 +126,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 12 ];
     }
     function set_redB( v: Float ): Float {
-        this[ 12 ] = v;
+        this.writeItem( 12, v );
         return v;
     }
     
@@ -137,7 +137,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_greenB( v: Float ): Float {
-        this[ 13 ] = v;
+        this.writeItem( 13, v );
         return v;
     }
     public var blueB( get, set ): Float;
@@ -147,7 +147,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_blueB( v: Float ): Float {
-        this[ 14 ] = v;
+        this.writeItem( 14, v );
         return v;
     }
     public var alphaB( get, set ): Float;
@@ -157,7 +157,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_alphaB( v: Float ): Float {
-        this[ 15 ] = v;
+        this.writeItem( 15, v );
         return v;
     }
     public var uB( get, set ): Float;
@@ -167,7 +167,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_uB( v: Float ): Float {
-        this[ 16 ] = v;
+        this.writeItem( 16, v );
         return v;
     }
     public var vB( get, set ): Float;
@@ -177,7 +177,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_vB( v: Float ): Float {
-        this[ 17 ] = v;
+        this.writeItem( 17, v );
         return v;
     }
 
@@ -186,7 +186,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 18 ];
     }
     function set_cx( v: Float ): Float {
-        this[ 18 ] = v;
+        this.writeItem( 18, v );
         return v;
     }
     public var cy( get, set ): Float;
@@ -194,7 +194,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 19 ];
     }
     function set_cy( v: Float ): Float {
-        this[ 19 ] = v;
+        this.writeItem( 19, v );
         return v;
     }
     public var cz( get, set ): Float;
@@ -202,7 +202,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 20 ];
     }
     function set_cz( v: Float ): Float {
-        this[ 20 ] = v;
+        this.writeItem( 20, v );
         return v;
     }
     
@@ -211,7 +211,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
         return this[ 21 ];
     }
     function set_redC( v: Float ): Float {
-        this[ 21 ] = v;
+        this.writeItem( 21, v );
         return v;
     }
     
@@ -222,7 +222,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_greenC( v: Float ): Float {
-        this[ 22 ] = v;
+        this.writeItem( 22, v );
         return v;
     }
     public var blueC( get, set ): Float;
@@ -232,7 +232,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_blueC( v: Float ): Float {
-        this[ 23 ] = v;
+        this.writeItem( 23, v );
         return v;
     }
     public var alphaC( get, set ): Float;
@@ -242,7 +242,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_alphaC( v: Float ): Float {
-        this[ 24 ] = v;
+        this.writeItem( 24, v );
         return v;
     }
     public var uC( get, set ): Float;
@@ -252,7 +252,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_uC( v: Float ): Float {
-        this[ 25 ] = v;
+        this.writeItem( 25, v );
         return v;
     }
     public var vC( get, set ): Float;
@@ -262,7 +262,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_vC( v: Float ): Float {
-        this[ 26 ] = v;
+        this.writeItem( 26, v );
         return v;
     }
     public var textureId( get, set ): Float;
@@ -272,7 +272,7 @@ abstract FloatColorTrianglesUVt( Flat3x9t ) from Flat3x9t to Flat3x9t {
     }
     inline
     function set_textureId( v: Float ): Float {
-        this[ 27 ] = v;
+        this.writeItem( 27, v );
         return v;
     }
     @:keep

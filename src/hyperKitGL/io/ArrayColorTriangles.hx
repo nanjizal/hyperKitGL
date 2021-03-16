@@ -1,14 +1,14 @@
 package hyperKitGL.io;
-import hyperKitGL.io.Flat3x7;
+import hyperKitGL.io.Array3x7;
 @:transitive
 @:forward
-abstract FloatColorTriangles( Flat3x7 ){
-    public inline function new( len: Int ){
-        this = new Flat3x7( len );
+abstract ArrayColorTriangles( Array3x7 ) from Array3x7 to Array3x7 {
+    public inline function new(){
+        this = new Array3x7();
     }
     public static inline
-    function create( len: Int ){
-        return new FloatColorTriangles( len * 21 );
+    function create(){
+        return new ArrayColorTriangles();
     }
     public var ax( get, set ): Float;
     function get_ax(): Float {
@@ -507,7 +507,7 @@ abstract FloatColorTriangles( Flat3x7 ){
     public inline
     function prettyAllVert(){
         this.pos = 0;
-        var str = 'FlatColorTriangle - Verts: \n';
+        var str = 'ArrayColorTriangle - Verts: \n';
         for( i in 0...this.size ) {
             str += prettyStringVert();
             this.next();
@@ -534,7 +534,7 @@ abstract FloatColorTriangles( Flat3x7 ){
     public inline
     function hexAll(){
         this.pos = 0;
-        var str = 'FlatColorTriangle - RGBA: \n';
+        var str = 'ArrayColorTriangle - RGBA: \n';
         for( i in 0...this.size ) {
             str += 'colorA: ' + hexA() + ', colorB: ' + hexB() +', colorC: ' + hexC() + '\n';
             this.next();

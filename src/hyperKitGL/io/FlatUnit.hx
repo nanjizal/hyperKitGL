@@ -10,7 +10,6 @@ abstract FlatUnit( Float32Flat ) {
     }
     @:op([]) public inline 
     function writeItem( k: Int, v: Float ): Float {
-        this.fits( k );
         this.writeItem( k, v );
         this.next();
         return v;

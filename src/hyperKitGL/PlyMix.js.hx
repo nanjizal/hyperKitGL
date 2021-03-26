@@ -103,7 +103,7 @@ class PlyMix{
                 case ModeTexture:
                     gl.useProgram( programTexture );
                     gl.bindBuffer( GL.ARRAY_BUFFER, bufTexture );
-                    gl.bindBuffer( GL.ARRAY_BUFFER, bufIndices );
+                    //gl.bindBuffer( GL.ARRAY_BUFFER, bufIndices );
                     updateBufferXYZ_RGBA_UV( gl, programTexture, vertexPosition, vertexColor, vertexTexture );
                     mode = ModeTexture;
                 default:
@@ -150,7 +150,7 @@ class PlyMix{
                         , cast dataGLtexture.data
                         , vertexPosition, vertexColor, vertexTexture, true );
         buildIndicesTexture( dataGLtexture.size );
-        bufIndices = passIndicesToShader( gl, indicesTexture );
+        bufIndices = passIndicesToShader( gl, indicesTexture, true );
     }
     inline
     function buildIndicesTexture( size: Int ){
@@ -187,9 +187,9 @@ class PlyMix{
         }
         var dynamicDraw = GL.DYNAMIC_DRAW;
         buildIndicesTexture( start - end );
-        gl.bufferData( GL.ELEMENT_ARRAY_BUFFER
+        /*gl.bufferData( GL.ELEMENT_ARRAY_BUFFER
                      , new Uint16Array( indicesTexture  )
-                     , dynamicDraw );
+                     , dynamicDraw );*/
         drawData( programTexture, dataGLtexture, start, end, 27 );
     }
     public

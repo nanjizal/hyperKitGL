@@ -395,7 +395,7 @@ abstract ArrayColorTrianglesUV( Array3x9 ) from Array3x9 to Array3x9 {
     public var y( get, set ): Float;   
     inline
     function get_y(): Float {
-        return Math.min( Math.min( ay, by ), cy );
+        return Math.max( Math.max( ay, by ), cy );
     }
     inline
     function set_y( y: Float ): Float {
@@ -477,8 +477,8 @@ abstract ArrayColorTrianglesUV( Array3x9 ) from Array3x9 to Array3x9 {
     }
     public inline 
     function rotate( x: Float, y: Float, theta: Float ){
-        var cos = Math.cos( theta );
-        var sin = Math.sin( theta );
+        var cos = Math.cos( -theta );
+        var sin = Math.sin( -theta );
         rotateTrig( x, y, cos, sin );
     }
     public inline 

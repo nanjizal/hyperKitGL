@@ -2478,10 +2478,14 @@
 	<typedef path="hyperKitGL.GL" params="" file="src/hyperKitGL/GL.js.hx"><c path="js.html.webgl.RenderingContext"/></typedef>
 	<class path="hyperKitGL.HelpGL" params="" file="src/hyperKitGL/HelpGL.js.hx">
 		<clearAll_ public="1" expr="clearAll">
-			<f a="gl:width:height">
+			<f a="gl:width:height:?r:?g:?b:?a">
 				<t path="hyperKitGL.GL"/>
 				<x path="Int"/>
 				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
 				<x path="Void"/>
 			</f>
 			<meta><m n=":value"><e>clearAll</e></m></meta>
@@ -2504,25 +2508,32 @@
 			</f>
 			<meta><m n=":value"><e>shaderSetup</e></m></meta>
 		</shaderSetup_>
-		<new public="1" set="method" line="63">
+		<new public="1" set="method" line="64">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":compilerGenerated"/></meta>
 		</new>
 	</class>
 	<class path="hyperKitGL._HelpGL.HelpGL_Fields_" params="" file="src/hyperKitGL/HelpGL.js.hx" private="1" module="hyperKitGL.HelpGL" final="1">
-		<clearAll public="1" get="inline" set="null" line="14" static="1"><f a="gl:width:height">
-	<t path="hyperKitGL.GL"/>
-	<x path="Int"/>
-	<x path="Int"/>
-	<x path="Void"/>
-</f></clearAll>
-		<programSetup public="1" get="inline" set="null" line="31" static="1"><f a="gl:strVertex:strFragment">
+		<clearAll public="1" get="inline" set="null" line="14" static="1">
+			<f a="gl:width:height:?r:?g:?b:?a" v=":::0.:0.:0.:0.">
+				<t path="hyperKitGL.GL"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Float"/>
+				<x path="Void"/>
+			</f>
+			<meta><m n=":value"><e>{ a : 0., b : 0., g : 0., r : 0. }</e></m></meta>
+		</clearAll>
+		<programSetup public="1" get="inline" set="null" line="32" static="1"><f a="gl:strVertex:strFragment">
 	<t path="hyperKitGL.GL"/>
 	<c path="String"/>
 	<c path="String"/>
 	<c path="js.html.webgl.Program"/>
 </f></programSetup>
-		<shaderSetup public="1" get="inline" set="null" line="51" static="1"><f a="gl:shaderType:str">
+		<shaderSetup public="1" get="inline" set="null" line="52" static="1"><f a="gl:shaderType:str">
 	<t path="hyperKitGL.GL"/>
 	<x path="Int"/>
 	<c path="String"/>
@@ -2881,49 +2892,65 @@
 		<programColor public="1"><c path="js.html.webgl.Program"/></programColor>
 		<dataGLcolor public="1"><x path="hyperKitGL.DataGL"/></dataGLcolor>
 		<bufColor public="1"><c path="js.html.webgl.Buffer"/></bufColor>
+		<bgA public="1" expr="0.9">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.9</e></m></meta>
+		</bgA>
+		<bgR public="1" expr="0.5">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.5</e></m></meta>
+		</bgR>
+		<bgG public="1" expr="0.0">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.0</e></m></meta>
+		</bgG>
+		<bgB public="1" expr="0.5">
+			<x path="Float"/>
+			<meta><m n=":value"><e>0.5</e></m></meta>
+		</bgB>
 		<mode public="1" expr="ModeNone">
 			<x path="hyperKitGL.ProgramMode"/>
 			<meta><m n=":value"><e>ModeNone</e></m></meta>
 		</mode>
-		<creategl get="inline" set="null" line="85"><f a=""><x path="Void"/></f></creategl>
-		<setProgramMode public="1" set="method" line="90"><f a="modeNew">
+		<creategl get="inline" set="null" line="89"><f a=""><x path="Void"/></f></creategl>
+		<setProgramMode public="1" set="method" line="94"><f a="modeNew">
 	<x path="hyperKitGL.ProgramMode"/>
 	<x path="Bool"/>
 </f></setProgramMode>
-		<setup get="inline" set="null" line="116"><f a=""><x path="Void"/></f></setup>
-		<setupProgramColor get="inline" set="null" line="131"><f a=""><x path="Void"/></f></setupProgramColor>
-		<setupProgramTexture get="inline" set="null" line="135"><f a=""><x path="Void"/></f></setupProgramTexture>
-		<setupInputColor get="inline" set="null" line="139"><f a=""><x path="Void"/></f></setupInputColor>
-		<setupInputTexture get="inline" set="null" line="146"><f a=""><x path="Void"/></f></setupInputTexture>
-		<buildIndicesTexture get="inline" set="null" line="156"><f a="size">
+		<setup get="inline" set="null" line="120"><f a=""><x path="Void"/></f></setup>
+		<setupProgramColor get="inline" set="null" line="135"><f a=""><x path="Void"/></f></setupProgramColor>
+		<setupProgramTexture get="inline" set="null" line="139"><f a=""><x path="Void"/></f></setupProgramTexture>
+		<setupInputColor get="inline" set="null" line="143"><f a=""><x path="Void"/></f></setupInputColor>
+		<setupInputTexture get="inline" set="null" line="150"><f a=""><x path="Void"/></f></setupInputTexture>
+		<buildIndicesTexture get="inline" set="null" line="160"><f a="size">
 	<x path="Int"/>
 	<c path="Array"><x path="Int"/></c>
 </f></buildIndicesTexture>
-		<changeImage public="1" set="method" line="162"><f a="img_">
+		<changeImage public="1" set="method" line="166"><f a="img_">
 	<c path="js.html.Image"/>
 	<x path="Void"/>
 </f></changeImage>
-		<setBackgroundShapeColor public="1" set="method" line="165"><f a="red:green:blue:alpha">
+		<setBackgroundShapeColor public="1" set="method" line="169"><f a="red:green:blue:alpha">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></setBackgroundShapeColor>
-		<draw public="1" set="method" line="171"><f a=""><x path="Void"/></f></draw>
-		<render get="inline" set="null" line="175"><f a=""><x path="Void"/></f></render>
-		<drawTextureShape public="1" set="method" line="181"><f a="start:end:bgColor">
+		<draw public="1" set="method" line="175"><f a=""><x path="Void"/></f></draw>
+		<render get="inline" set="null" line="179"><f a=""><x path="Void"/></f></render>
+		<drawTextureShape public="1" set="method" line="185"><f a="start:end:bgColor">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawTextureShape>
-		<drawColorShape public="1" set="method" line="196"><f a="start:end">
+		<drawColorShape public="1" set="method" line="200"><f a="start:end">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawColorShape>
-		<drawData public="1" set="method" line="201"><f a="program:dataGL:start:end:len">
+		<drawData public="1" set="method" line="205"><f a="program:dataGL:start:end:len">
 	<c path="js.html.webgl.Program"/>
 	<x path="hyperKitGL.DataGL"/>
 	<x path="Int"/>
@@ -2931,12 +2958,12 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></drawData>
-		<withAlpha public="1" get="inline" set="null" line="208"><f a=""><x path="Void"/></f></withAlpha>
-		<notAlpha public="1" get="inline" set="null" line="212"><f a=""><x path="Void"/></f></notAlpha>
-		<renderDraw public="1" set="method" line="217"><f a=""><x path="Void"/></f></renderDraw>
-		<renderOnce public="1" set="method" line="219"><f a=""><x path="Void"/></f></renderOnce>
-		<setAnimate get="inline" set="null" line="223"><f a=""><x path="Void"/></f></setAnimate>
-		<new public="1" set="method" line="71">
+		<withAlpha public="1" get="inline" set="null" line="212"><f a=""><x path="Void"/></f></withAlpha>
+		<notAlpha public="1" get="inline" set="null" line="216"><f a=""><x path="Void"/></f></notAlpha>
+		<renderDraw public="1" set="method" line="221"><f a=""><x path="Void"/></f></renderDraw>
+		<renderOnce public="1" set="method" line="223"><f a=""><x path="Void"/></f></renderOnce>
+		<setAnimate get="inline" set="null" line="227"><f a=""><x path="Void"/></f></setAnimate>
+		<new public="1" set="method" line="75">
 			<f a="width_:height_:?hasImage:?animate" v="::true:true">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -3555,7 +3582,9 @@
 </f></swap>
 	</class>
 	<abstract path="hyperKitGL.io.ArrayColorTriangles" params="" file="src/hyperKitGL/io/ArrayColorTriangles.hx">
+		<from><icast><x path="hyperKitGL.io.Array3x7"/></icast></from>
 		<this><x path="hyperKitGL.io.Array3x7"/></this>
+		<to><icast><x path="hyperKitGL.io.Array3x7"/></icast></to>
 		<meta>
 			<m n=":transitive"/>
 			<m n=":forward"/>
@@ -6974,13 +7003,13 @@
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></rangeToEnd>
-	<rangeToStart public="1" get="inline" set="null" line="37" static="1"><f a="this:starting:totalLen">
+	<rangeToStart public="1" get="inline" set="null" line="35" static="1"><f a="this:starting:totalLen">
 	<x path="hyperKitGL.io.ArrayFlat"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></rangeToStart>
-	<rangeSwitch public="1" get="inline" set="null" line="64" static="1"><f a="this:start0:start1:totalLen">
+	<rangeSwitch public="1" get="inline" set="null" line="60" static="1"><f a="this:start0:start1:totalLen">
 	<x path="hyperKitGL.io.ArrayFlat"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -7002,13 +7031,13 @@
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></rangeToEnd>
-		<rangeToStart public="1" get="inline" set="null" line="37" static="1"><f a="this:starting:totalLen">
+		<rangeToStart public="1" get="inline" set="null" line="35" static="1"><f a="this:starting:totalLen">
 	<x path="hyperKitGL.io.ArrayFlat"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></rangeToStart>
-		<rangeSwitch public="1" get="inline" set="null" line="64" static="1"><f a="this:start0:start1:totalLen">
+		<rangeSwitch public="1" get="inline" set="null" line="60" static="1"><f a="this:start0:start1:totalLen">
 	<x path="hyperKitGL.io.ArrayFlat"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -7032,13 +7061,16 @@
 		</f>
 		<meta><m n=":op"><e>[]</e></m></meta>
 	</readItem>
-	<writeItem public="1" get="inline" set="null" line="14" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
-	<_new public="1" get="inline" set="null" line="18" static="1">
+	<writeItem public="1" get="inline" set="null" line="13" static="1">
+		<f a="this:k:v">
+			<x path="hyperKitGL.io.Float32FlatDepth"/>
+			<x path="Int"/>
+			<x path="Float"/>
+			<x path="Float"/>
+		</f>
+		<meta><m n=":op"><e>[]</e></m></meta>
+	</writeItem>
+	<_new public="1" get="inline" set="null" line="17" static="1">
 		<f a="len">
 			<x path="Int"/>
 			<x path="hyperKitGL.io.Flat3x7"/>
@@ -7046,32 +7078,32 @@
 		<meta><m n=":noCompletion"/></meta>
 	</_new>
 	<index public="1" get="accessor" set="accessor" static="1"><x path="Int"/></index>
-	<get_index get="inline" set="null" line="24" static="1"><f a="this">
+	<get_index get="inline" set="null" line="23" static="1"><f a="this">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 </f></get_index>
-	<set_index get="inline" set="null" line="28" static="1"><f a="this:id">
+	<set_index get="inline" set="null" line="27" static="1"><f a="this:id">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_index>
-	<getArray public="1" get="inline" set="null" line="34" static="1"><f a="this">
+	<getArray public="1" get="inline" set="null" line="33" static="1"><f a="this">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<t path="hyperKitGL.io.Float32Array"/>
 </f></getArray>
-	<toEnd public="1" get="inline" set="null" line="38" static="1"><f a="this:id:len">
+	<toEnd public="1" get="inline" set="null" line="37" static="1"><f a="this:id:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></toEnd>
-	<toStart public="1" get="inline" set="null" line="42" static="1"><f a="this:id:len">
+	<toStart public="1" get="inline" set="null" line="41" static="1"><f a="this:id:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></toStart>
-	<swap public="1" get="inline" set="null" line="46" static="1"><f a="this:id0:id1:len">
+	<swap public="1" get="inline" set="null" line="45" static="1"><f a="this:id0:id1:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -7089,13 +7121,16 @@
 			</f>
 			<meta><m n=":op"><e>[]</e></m></meta>
 		</readItem>
-		<writeItem public="1" get="inline" set="null" line="14" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
-		<_new public="1" get="inline" set="null" line="18" static="1">
+		<writeItem public="1" get="inline" set="null" line="13" static="1">
+			<f a="this:k:v">
+				<x path="hyperKitGL.io.Float32FlatDepth"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":op"><e>[]</e></m></meta>
+		</writeItem>
+		<_new public="1" get="inline" set="null" line="17" static="1">
 			<f a="len">
 				<x path="Int"/>
 				<x path="hyperKitGL.io.Flat3x7"/>
@@ -7103,32 +7138,32 @@
 			<meta><m n=":noCompletion"/></meta>
 		</_new>
 		<index public="1" get="accessor" set="accessor" static="1"><x path="Int"/></index>
-		<get_index get="inline" set="null" line="24" static="1"><f a="this">
+		<get_index get="inline" set="null" line="23" static="1"><f a="this">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 </f></get_index>
-		<set_index get="inline" set="null" line="28" static="1"><f a="this:id">
+		<set_index get="inline" set="null" line="27" static="1"><f a="this:id">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_index>
-		<getArray public="1" get="inline" set="null" line="34" static="1"><f a="this">
+		<getArray public="1" get="inline" set="null" line="33" static="1"><f a="this">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<t path="hyperKitGL.io.Float32Array"/>
 </f></getArray>
-		<toEnd public="1" get="inline" set="null" line="38" static="1"><f a="this:id:len">
+		<toEnd public="1" get="inline" set="null" line="37" static="1"><f a="this:id:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></toEnd>
-		<toStart public="1" get="inline" set="null" line="42" static="1"><f a="this:id:len">
+		<toStart public="1" get="inline" set="null" line="41" static="1"><f a="this:id:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
 </f></toStart>
-		<swap public="1" get="inline" set="null" line="46" static="1"><f a="this:id0:id1:len">
+		<swap public="1" get="inline" set="null" line="45" static="1"><f a="this:id0:id1:len">
 	<x path="hyperKitGL.io.Float32FlatDepth"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -7153,12 +7188,15 @@
 		</f>
 		<meta><m n=":op"><e>[]</e></m></meta>
 	</readItem>
-	<writeItem public="1" get="inline" set="null" line="14" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
+	<writeItem public="1" get="inline" set="null" line="14" static="1">
+		<f a="this:k:v">
+			<x path="hyperKitGL.io.Float32FlatDepth"/>
+			<x path="Int"/>
+			<x path="Float"/>
+			<x path="Float"/>
+		</f>
+		<meta><m n=":op"><e>[]</e></m></meta>
+	</writeItem>
 	<_new public="1" get="inline" set="null" line="18" static="1">
 		<f a="len">
 			<x path="Int"/>
@@ -7210,12 +7248,15 @@
 			</f>
 			<meta><m n=":op"><e>[]</e></m></meta>
 		</readItem>
-		<writeItem public="1" get="inline" set="null" line="14" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
+		<writeItem public="1" get="inline" set="null" line="14" static="1">
+			<f a="this:k:v">
+				<x path="hyperKitGL.io.Float32FlatDepth"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":op"><e>[]</e></m></meta>
+		</writeItem>
 		<_new public="1" get="inline" set="null" line="18" static="1">
 			<f a="len">
 				<x path="Int"/>
@@ -7274,12 +7315,15 @@
 		</f>
 		<meta><m n=":op"><e>[]</e></m></meta>
 	</readItem>
-	<writeItem public="1" get="inline" set="null" line="15" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
+	<writeItem public="1" get="inline" set="null" line="15" static="1">
+		<f a="this:k:v">
+			<x path="hyperKitGL.io.Float32FlatDepth"/>
+			<x path="Int"/>
+			<x path="Float"/>
+			<x path="Float"/>
+		</f>
+		<meta><m n=":op"><e>[]</e></m></meta>
+	</writeItem>
 	<_new public="1" get="inline" set="null" line="19" static="1">
 		<f a="len">
 			<x path="Int"/>
@@ -7331,12 +7375,15 @@
 			</f>
 			<meta><m n=":op"><e>[]</e></m></meta>
 		</readItem>
-		<writeItem public="1" get="inline" set="null" line="15" static="1"><f a="this:k:v">
-	<x path="hyperKitGL.io.Float32FlatDepth"/>
-	<x path="Int"/>
-	<x path="Float"/>
-	<x path="Float"/>
-</f></writeItem>
+		<writeItem public="1" get="inline" set="null" line="15" static="1">
+			<f a="this:k:v">
+				<x path="hyperKitGL.io.Float32FlatDepth"/>
+				<x path="Int"/>
+				<x path="Float"/>
+				<x path="Float"/>
+			</f>
+			<meta><m n=":op"><e>[]</e></m></meta>
+		</writeItem>
 		<_new public="1" get="inline" set="null" line="19" static="1">
 			<f a="len">
 				<x path="Int"/>

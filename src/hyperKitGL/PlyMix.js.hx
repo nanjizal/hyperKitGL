@@ -22,6 +22,7 @@ import js.html.webgl.Texture;
 import hyperKitGL.GL;
 import js.lib.Uint16Array;
 import js.lib.Uint8Array;
+import hyperKitGL.ARGB;
 
 enum abstract ProgramMode(Int) {
   var ModeNone;
@@ -66,7 +67,10 @@ class PlyMix{
     public var programColor:     Program;
     public var dataGLcolor:      DataGL;
     public var bufColor:         Buffer;
-    
+    public var bgA: Float = 0.9;
+    public var bgR: Float = 0.5;
+    public var bgG: Float = 0.0;
+    public var bgB: Float = 0.5;
     public var mode: ProgramMode = ModeNone;
     public
     function new( width_: Int, height_: Int, ?hasImage: Bool = true, ?animate: Bool = true ){
@@ -173,7 +177,7 @@ class PlyMix{
     }
     inline
     function render(){
-        clearAll( gl, width, height );
+        clearAll( gl, width, height, bgR, bgG, bgB, bgA );
         //gl.bindBuffer( RenderingContext.ARRAY_BUFFER, bufColor );
         renderDraw();
     }
@@ -217,7 +221,7 @@ class PlyMix{
     function renderDraw(){}
     public
     function renderOnce(){
-        clearAll( gl, width, height );
+        clearAll( gl, width, height, bgR, bgG, bgB, bgA );
     }
     inline
     function setAnimate(){

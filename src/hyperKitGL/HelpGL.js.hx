@@ -11,8 +11,9 @@ import js.lib.Uint16Array;
 import js.lib.Uint8Array;
 import hyperKitGL.GL;
 inline
-function clearAll( gl: GL, width: Int, height: Int ){
-    gl.clearColor( 0.5, 0.0, 0.5, 0.9 );
+function clearAll( gl: GL, width: Int, height: Int, r: Float = 0., g: Float = 0., b: Float = 0., a: Float = 0. ){
+    //gl.clearColor( 0.5, 0.0, 0.5, 0.9 );
+    gl.clearColor( r, g, b, a );
     gl.enable( RenderingContext.DEPTH_TEST );
     gl.clear( GL.COLOR_BUFFER_BIT );
     //gl.colorMask(true, true, true, false);
@@ -61,7 +62,7 @@ function shaderSetup( gl: GL
 
 // just used for docs
 class HelpGL {
-    public var clearAll_:( gl: GL, width: Int, height: Int ) -> Void =     clearAll;
+    public var clearAll_:( gl: GL, width: Int, height: Int, ?r: Float, ?g: Float, ?b: Float , ?a: Float ) -> Void =     clearAll;
     public var programSetup_:    ( gl:           GL
                                  , strVertex:    String
                                  , strFragment:  String ) -> Program = programSetup;

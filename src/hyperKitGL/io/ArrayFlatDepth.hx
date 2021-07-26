@@ -7,6 +7,14 @@ abstract ArrayFlatDepth( ArrayFlat )/* to ArrayFlat from ArrayFlat*/ {
     function new(){
         this = new ArrayFlat();
     }
+    public inline
+    function getArray(): Float32Array {
+        var fa32 = new Float32Array( this.length - 1 );
+        for( i in 0...( this.length - 1 ) ){
+            fa32[ i ] = this.readItem( i );
+        }
+        return fa32;
+    }
     public
     function rangeToEnd( starting: Int, totalLen: Int, section: Int ){
         var ending: Int = starting + totalLen;

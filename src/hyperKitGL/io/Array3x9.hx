@@ -28,14 +28,6 @@ abstract Array3x9( ArrayFlatDepth ) {
         this.index = id;
         return id;
     }
-    public inline
-    function getArray(): Float32Array {
-        var fa32 = new Float32Array( this.length - 1 );
-        for( i in 0...( this.length - 1 ) ){
-            fa32[ i ] = this.readItem( i );
-        }
-        return fa32;
-    }
     public inline 
     function toEnd( id: Int, len: Int ){
         return this.rangeToEnd( id*27, Std.int( 27 * len ) , this.size );
